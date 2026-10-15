@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffd700" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description" content="Doge Dragon Quest - Cute adventure game. Developer by Muhammad Usman" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <title>Doge Dragon Quest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-container">
+    <!-- Loading -->
+    <div id="loading-screen">
+      <div class="logo">🐕 Doge Dragon Quest</div>
+      <div class="subtitle">Much Adventure • Very Fire</div>
+      <div class="loader-bar"><div class="loader-fill" id="loader-fill"></div></div>
+      <div class="loader-text" id="loader-text">Loading Adventure...</div>
+    </div>
+
+    <!-- Main Menu -->
+    <div id="menu-screen" class="screen">
+      <h1>🐕 Doge Dragon</h1>
+      <h2>Quest</h2>
+      <button class="btn" id="btn-play">Play</button>
+      <button class="btn secondary" id="btn-levels">Levels</button>
+      <button class="btn secondary" id="btn-settings">Settings</button>
+      <div class="credits">Developer by <strong>Muhammad Usman</strong></div>
+    </div>
+
+    <!-- Level Select -->
+    <div id="level-screen" class="screen">
+      <h2>Select Level</h2>
+      <div class="level-grid" id="level-grid"></div>
+      <button class="btn secondary" id="btn-back-levels">Back</button>
+      <div class="credits">Developer by <strong>Muhammad Usman</strong></div>
+    </div>
+
+    <!-- Settings -->
+    <div id="settings-screen" class="screen">
+      <h2>Settings</h2>
+      <div class="settings-row">
+        <span>Sound</span>
+        <div class="toggle on" id="toggle-sound"></div>
+      </div>
+      <div class="settings-row">
+        <span>Vibration</span>
+        <div class="toggle on" id="toggle-vib"></div>
+      </div>
+      <button class="btn secondary" id="btn-back-settings">Back</button>
+      <div class="credits">Developer by <strong>Muhammad Usman</strong></div>
+    </div>
+
+    <!-- Pause -->
+    <div id="pause-screen" class="screen">
+      <div class="overlay-box">
+        <h2>Paused</h2>
+        <button class="btn" id="btn-resume">Resume</button>
+        <button class="btn secondary" id="btn-restart">Restart Level</button>
+        <button class="btn secondary" id="btn-quit">Main Menu</button>
+        <div style="margin-top:16px;font-size:0.8rem;color:#888;">Developer by <strong style="color:#ffd700">Muhammad Usman</strong></div>
+      </div>
+    </div>
+
+    <!-- Game Over / Win -->
+    <div id="result-screen" class="screen">
+      <div class="overlay-box">
+        <h2 id="result-title">Level Complete!</h2>
+        <div class="score-big" id="result-score">0</div>
+        <p id="result-msg" style="color:#aaa;margin-bottom:16px;"></p>
+        <button class="btn" id="btn-next">Next Level</button>
+        <button class="btn secondary" id="btn-retry">Retry</button>
+        <button class="btn secondary" id="btn-menu">Main Menu</button>
+        <div style="margin-top:16px;font-size:0.8rem;color:#888;">Developer by <strong style="color:#ffd700">Muhammad Usman</strong></div>
+      </div>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud">
+      <div class="hud-left">
+        <div class="hearts" id="hud-hearts">❤️❤️❤️</div>
+        <div class="hud-item">⭐ <span id="hud-score">0</span></div>
+      </div>
+      <div class="hud-right">
+        <div class="hud-item">Level <span id="hud-level">1</span></div>
+        <div class="hud-item">🪙 <span id="hud-coins">0</span></div>
+      </div>
+    </div>
+
+    <!-- Mobile Controls -->
+    <button class="ctrl-btn" id="btn-pause">⏸</button>
+    <div id="controls">
+      <div class="ctrl-btn" id="btn-left">◀</div>
+      <div class="ctrl-btn" id="btn-right">▶</div>
+      <div class="ctrl-btn" id="btn-jump">▲</div>
+      <div class="ctrl-btn" id="btn-fire">🔥</div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
